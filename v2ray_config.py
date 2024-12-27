@@ -45,4 +45,30 @@ class V2rayConfig:
 	def init_fragment(cls, packets=None, length=None, interval=None):
 		return {"packets": packets, "length": length, "interval": interval}
 
+	@classmethod
+	def init_noise(cls, type=None, packet=None, delay=None):
+		return {"type": type, "packet": packet, "delay": delay}
+
+	@classmethod
+	def init_servers(cls, address="", method=None, ota=False, password=None, port=443, level=8, email=None, flow=None, ivCheck=None, users=None):
+		return {"address": address, "method": method, "ota": ota, "password": password, "port": port, "level": level, "email": email, "flow": flow, "ivCheck": ivCheck, "users": users}
+
+	@classmethod
+	def init_socks_users(cls, user="", pss="", level=8):
+		return {"user": user, "pass": pss, "level": level}
+
+	@classmethod
+	def init_response(cls, type):
+		return {"type": type}
+
+	@classmethod
+	def init_wireguard(cls, public_key="", pre_shared_key="", endpoint=""):
+		return {"publicKey": public_key, "preSharedKey": pre_shared_key, "endpoint": endpoint}
+
+	# @classmethod
+	# def init_tcp_settings(header):
+
+	# @classmethod
+	# def init_stream_settings(cls, network=None, security=None, tcpSettings=None, kcpSettings=None, wsSettings=None, httpupgradeSettings=None, xhttpSettings=None, httpSettings=None, tlsSettings=None, quicSettings=None, realitySettings=None, grpcSettings=None, hy2steriaSettings=None, dsSettings=None, sockopt=None):
+
 	# TODO: finish V2rayConfig implementation
